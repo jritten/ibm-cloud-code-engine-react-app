@@ -1,4 +1,5 @@
 import React, {useEffect, useMemo, useState} from 'react';
+import env from "react-dotenv";
 import logo from './logo.svg';
 import AppID from 'ibmcloud-appid-js';
 import './App.css';
@@ -15,8 +16,8 @@ function App() {
     (async () => {
         try {
           await appID.init({
-            clientId: process.env.CLIENT_ID,
-            discoveryEndpoint: process.env.DISCOVERY_ENDPOINT
+            clientId: process.env.REACT_APP_CLIENT_ID,
+            discoveryEndpoint: process.env.REACT_APP_DISCOVERY_ENDPOINT
           });
         } catch (e) {
           console.error(e);
